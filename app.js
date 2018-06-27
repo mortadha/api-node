@@ -15,7 +15,7 @@ app.set('view engine', 'jade');
 
 mongoose.connect('mongodb://rania:PNETJ9t13FZyO5B55yIQOikeV9cXgslKLlBC06YrZC0GSh61hhbx4RAf8OJg62iuMRiaVQ4DHYC0fltAvF2Z0Q%3D%3D@rania.documents.azure.com:10255/?ssl=true');
 var db = mongoose.connections;
-
+console.log('test');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
