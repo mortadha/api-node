@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var io = require('socket.io').listen(app.listen(config.portSoket));
+var io = require('socket.io').listen(app.listen(33333));
 io.sockets.on('connection', function (socket) {
   console.log('client connect');
   socket.on('echo', function (data) {
