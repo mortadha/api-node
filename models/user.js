@@ -15,6 +15,6 @@ module.exports.addUser = function(user,callback){
 
 //login user 
 module.exports.login = function(login,callback){
-    User.findOne({'login': login}
+    User.find({'pseudo': login}
         , callback)
 }

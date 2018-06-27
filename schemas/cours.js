@@ -8,7 +8,7 @@ module.exports = coursSchema = new Schema({
     description:String,
     objectifs:String,
     mots_clé:String,
-    email:String,
+    uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'},
     messages:[{
         uploaded_by_user: {type: Schema.Types.ObjectId, ref: 'User'},
         date: {type: Date, default: Date.now},

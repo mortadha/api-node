@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 users = require('../models/user.js');
+cours = require('../models/cours.js');
+event = require('../models/event.js');
+
 var bcrypt = require('bcrypt');
 
 /* add admin. */
@@ -74,11 +77,13 @@ router.post('/addApprenant', function(req, res, next) {
   let password = req.body.password;
   bcrypt.hash(password,5, function(err, bcryptedPassword) {
     let pseudo = req.body.pseudo;
-    let password = bcryptedPassword;
-      
+   let password = bcryptedPassword;
+    console.log(password)  ;
     users.login(pseudo,function(err,callback){
-      if(admin.length > 0){
-        bcrypt.compare(password, admin[0].password, function(err, resbcrypt) {
+      if(callback.length > 0){
+        console.log(callback[0].password);
+        bcrypt.compare(password, callback[0].password, function(err, resbcrypt) {
+          console.log(resbcrypt);
           if(resbcrypt){
             res.status(200).json({
               'success':true,
@@ -99,6 +104,41 @@ router.post('/addApprenant', function(req, res, next) {
     });
   });
   
+});
+
+ /* add cour. */
+ router.post('/addCours', function(req, res, next) {
+  let cour = {}
+  cour.name = req.body.name;
+  cour.description = req.body.description;
+  cour.objectifs = req.body.objectifs;
+  cour.mots_clé = req.body.mots_clé;
+  cour.plan = req.body.plan;
+  cour.uploaded_by = req.body.uploaded_by;
+  
+  
+  cours.addCours(cour,function(err,callback){
+    return res.status(200).json({'user': callback});
+  });
+});
+
+
+ /* add event. */
+ router.post('/addEvent', function(req, res, next) {
+  let evenement = {}
+  evenement.name = req.body.name;
+  evenement.description = req.body.description;
+  evenement.h_debut = req.body.h_debut;
+  evenement.h_fin = req.body.h_fin;
+  evenement.uploaded_by = req.body.uploaded_by;
+  let cours = {};
+  cours.id = req.body.cours;
+  evenement.cours = cours;
+  evenement.date = new Date(req.body.date);
+
+  event.addEvent(evenement,function(err,callback){
+    return res.status(200).json({'event': callback});
+  });
 });
 
 module.exports = router;
