@@ -7,7 +7,9 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+var app = require('express')()
+  , server = require('http').createServer(app)
+  , io = require('socket.io').listen(server)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,13 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var io = require('socket.io').listen(app.listen(3333));
+/*var io = require('socket.io').listen(app.listen(3333));
 io.sockets.on('connection', function (socket) {
   console.log('client connect');
   socket.on('echo', function (data) {
   io.sockets.emit('message', data);
 });
-});
+});*/
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -48,5 +50,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+
+app.start = app.listen = function(){
+  return server.listen.apply(server, arguments)
+}
+console.log('tets')
+app.start(8080)
 
 module.exports = app;
