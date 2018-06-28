@@ -141,4 +141,14 @@ router.post('/addApprenant', function(req, res, next) {
   });
 });
 
+/* get events. */
+router.get('/getEvents', function(req, res, next) {
+  event.getEvent( function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
 module.exports = router;

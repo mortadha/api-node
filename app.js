@@ -32,7 +32,7 @@ io.sockets.on('connection', function (socket) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+require('./ioRoutes')(app,io); 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
