@@ -3,12 +3,13 @@ var Schema = mongoose.Schema;
 
 
 //user shema
-module.exports = coursSchema = new Schema({
+module.exports = coursSchema = new Schema({ 
     name: String,
     description:String,
     objectifs:String,
     mots_clé:String,
     uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'},
+    categorie: String,
     messages:[{
         uploaded_by_user: {type: Schema.Types.ObjectId, ref: 'User'},
         date: {type: Date, default: Date.now},

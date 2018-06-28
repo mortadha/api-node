@@ -28,3 +28,11 @@ module.exports.getMyCours = function(id,callback,limit){
 module.exports.deleteCours = function(id,callback,limit){
     Cours.delete({_id: id},callback);
 }
+
+
+//search cour
+
+module.exports.findTags = function(text,type,callback){
+    Cours.find({categorie: { $regex: '.*' + text + '.*' } })
+    .exec(callback);;
+}

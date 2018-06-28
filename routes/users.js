@@ -3,6 +3,7 @@ var router = express.Router();
 users = require('../models/user.js');
 cours = require('../models/cours.js');
 event = require('../models/event.js');
+categorie = require('../models/categorie.js');
 
 var bcrypt = require('bcrypt');
 
@@ -150,5 +151,41 @@ router.get('/getEvents', function(req, res, next) {
     return res.status(200).json(events);
   });
 });
+
+
+/* get events. */
+router.get('/getMyEvents', function(req, res, next) {
+  id = req.body.id;
+  event.getMyEvent(id, function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
+
+
+ /* add addCategorie. */
+ router.post('/addCategorie', function(req, res, next) {
+  let cat = {}
+  cat.name = req.body.name;
+  cat.description = req.body.description;
+ 
+
+  categorie.addCategorie(cat,function(err,callback){
+    return res.status(200).json({'event': callback});
+  });
+});
+
+
+/* findCours. */
+router.post('/findCours', function(req, res, next) {
+ search = req.body.text;
+ cours.findCours(search,function(err,callback){
+    return res.status(200).json({'event': callback});
+  });
+});
+
 
 module.exports = router;
