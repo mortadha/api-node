@@ -32,7 +32,7 @@ module.exports.deleteCours = function(id,callback,limit){
 
 //search cour
 
-module.exports.findTags = function(text,type,callback){
+module.exports.findCours = function(text,type,callback){
     Cours.find({categorie: { $regex: '.*' + text + '.*' } })
     .exec(callback);;
 }

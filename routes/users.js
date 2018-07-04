@@ -31,7 +31,8 @@ router.post('/addAdmin', function(req, res, next) {
 
 /* add tuteur. */
 router.post('/addTuteur', function(req, res, next) {
- 
+  console.log("ici");
+  console.log(req.body);
   let password = req.body.password;
   bcrypt.hash(password,5, function(err, bcryptedPassword) {
     let admin = {};
@@ -76,16 +77,12 @@ router.post('/addApprenant', function(req, res, next) {
  router.post('/login', function(req, res, next) {
  
   let password = req.body.password;
-  bcrypt.hash(password,5, function(err, bcryptedPassword) {
-    let pseudo = req.body.pseudo;
-   let password = bcryptedPassword;
-    console.log(password)  ;
-    users.login(pseudo,function(err,callback){
-      if(callback.length > 0){
-        console.log(callback[0].password);
-        bcrypt.compare(password, callback[0].password, function(err, resbcrypt) {
-          console.log(resbcrypt);
-          if(resbcrypt){
+  
+   let pseudo = req.body.pseudo;
+   users.login(pseudo,function(err,callback){
+     if(callback.length > 0){
+      bcrypt.compare(password, callback[0].password, function(err, resbcrypt) {
+         if(resbcrypt){
             res.status(200).json({
               'success':true,
               'result':{
@@ -103,7 +100,7 @@ router.post('/addApprenant', function(req, res, next) {
       }
         
     });
-  });
+ 
   
 });
 
