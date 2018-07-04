@@ -164,7 +164,7 @@ router.get('/getMyEvents', function(req, res, next) {
 /* get events. */
 router.get('/getMycours/:id', function(req, res, next) {
   id = req.params.id;
-  event.getMyCours(id, function(err,events){
+  cours.getMyCours(id, function(err,events){
     if(err){
       throw err;
     }
