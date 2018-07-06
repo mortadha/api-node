@@ -9,10 +9,7 @@ module.exports = eventSchema = new Schema({
     h_debut: String,
     h_fin: String,
     uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'},
-    cours:{          
-        id :{type: mongoose.Schema.Types.ObjectId, ref: 'Cours'},
-        date: {type: Date, default: Date.now}
-        },
+    cours:String,
     date:{
         type: Date,
         default: Date.now
