@@ -129,9 +129,8 @@ router.post('/addApprenant', function(req, res, next) {
   evenement.h_debut = req.body.h_debut;
   evenement.h_fin = req.body.h_fin;
   evenement.uploaded_by = req.body.uploaded_by;
-  let cours = {};
-  cours.id = req.body.cours;
-  evenement.cours = cours;
+ 
+  evenement.cours = req.body.cours;
   evenement.date = new Date(req.body.date);
 
   event.addEvent(evenement,function(err,callback){
