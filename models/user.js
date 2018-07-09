@@ -18,3 +18,18 @@ module.exports.login = function(login,callback){
     User.find({'pseudo': login}
         , callback)
 }
+
+//my profil
+module.exports.myProfil = function(id,callback){
+    User.findOne({_id: id}
+        , callback)
+}
+
+
+//my profil
+module.exports.updateMyProfil = function(id,profil,callback){
+    console.log(profil);
+    console.log(id);
+    User.updateOne({_id: id}, {name: profil.name,prenon:profil.prenon,phone: profil.phone,email:profil.email,pseudo:profil.pseudo}, {multi: true}
+        , callback)
+}

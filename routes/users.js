@@ -131,8 +131,6 @@ router.post('/addApprenant', function(req, res, next) {
   evenement.uploaded_by = req.body.uploaded_by;
  
   evenement.cours = req.body.cours;
-  evenement.date = new Date(req.body.date);
-
   event.addEvent(evenement,function(err,callback){
     return res.status(200).json({'event': callback});
   });
@@ -150,9 +148,59 @@ router.get('/getEvents', function(req, res, next) {
 
 
 /* get events. */
-router.get('/getMyEvents', function(req, res, next) {
-  id = req.body.id;
-  event.getMyEvent(id, function(err,events){
+router.get('/getMyEvents/:id', function(req, res, next) {
+  var id = req.params.id;
+  event.getMyEvents(id, function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
+/* get events. */
+router.delete('/deleteEvents/:id', function(req, res, next) {
+  var id = req.params.id;
+  event.deleteEvents(id, function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
+
+/*myProfil. */
+router.get('/myProfil/:id', function(req, res, next) {
+  var id = req.params.id;
+  console.log(id)
+  users.myProfil(id, function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
+/*myProfil. */
+router.post('/updateMyProfil/', function(req, res, next) {
+  var id = req.body.id;
+  var profil = req.body;
+  users.updateMyProfil(id,profil, function(err,events){
+    if(err){
+      throw err;
+    }
+    return res.status(200).json(events);
+  });
+});
+
+
+
+/* get events. */
+router.get('/getEvent/:id', function(req, res, next) {
+  id = req.params.id;
+
+  event.getEvent(id, function(err,events){
     if(err){
       throw err;
     }

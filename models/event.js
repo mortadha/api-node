@@ -22,7 +22,13 @@ module.exports.getMyEvents = function(id,callback,limit){
     Events.find({uploaded_by: id},callback).limit(limit);
 }
 
+//Get My events 
+module.exports.getEvent = function(id,callback,limit){
+    Events.find({_id: id},callback).limit(limit);
+}
+
 //delete Events 
 module.exports.deleteEvents = function(id,callback,limit){
-    Events.delete({_id: id},callback);
+    console.log(id);
+    Events.deleteOne({_id: id},callback);
 }
