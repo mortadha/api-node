@@ -31,7 +31,11 @@ io.sockets.on('connection', function (socket) {
   io.sockets.emit('message', data);
 });
 });
-
+app.post('/message', function(req, res, next) {
+  var message = req.body.message;
+  io.sockets.emit('message', message);
+  return res.status(200).json({'message': true});
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
