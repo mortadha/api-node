@@ -12,7 +12,7 @@ var multer  = require('multer');
 //config multer for upload video
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../public//')
+      cb(null, '../public/')
     },
     filename: function (req, file, cb) {
       cb(null,  file.originalname)
@@ -26,8 +26,8 @@ var storage = multer.diskStorage({
 
 /* add admin. */
 router.post('/xml',upload.single('xml'), function(req, res, next) {
-  //var video_name =  req.file.originalname;
-  var xml = fs.readFileSync('../public/xml--0024-01.xml', 'utf8');
+  var video_name =  req.file.originalname;
+  var xml = fs.readFileSync('../public/'+video_name, 'utf8');
  var inspect = require('util').inspect;
   var obj = parse(xml);
   let positionAnnoces = 0 ;
