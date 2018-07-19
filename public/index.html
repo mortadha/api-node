@@ -13,6 +13,7 @@
         $(function(){
     $('#uploadBTN').on('click', function(){ 
         var fd = new FormData($("#fileinfo"));
+        console.log(fd);
         //fd.append("CustomField", "This is some extra data");
         $.ajax({
             url: 'https://api-rania.azurewebsites.net/api/xml',  
