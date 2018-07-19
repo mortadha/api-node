@@ -4,7 +4,7 @@
 
 <form id="fileinfo" enctype="multipart/form-data" method="post" name="fileinfo">
     <label>File to stash:</label>
-    <input type="file" name="xml" required />
+    <input type="file" name="xml" id="xml" required />
 </form>
 <input id="uploadBTN" type="button" value="Stash the file!"></input>
 <div id="output"></div>
@@ -13,7 +13,8 @@
         $(function(){
     $('#uploadBTN').on('click', function(){ 
         var fd = new FormData($("#fileinfo"));
-        console.log(fd);
+        var input = document.getElementById("xml"),
+        console.log(input);
         //fd.append("CustomField", "This is some extra data");
         $.ajax({
             url: 'https://api-rania.azurewebsites.net/api/xml',  
