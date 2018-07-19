@@ -2,11 +2,31 @@
 <html>
 <body>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+<form id="fileinfo" enctype="multipart/form-data" method="post" name="fileinfo">
+    <label>File to stash:</label>
+    <input type="file" name="xml" required />
 </form>
-
+<input type="button" value="Stash the file!"></input>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+    $('#uploadBTN').on('click', function(){ 
+        var fd = new FormData($("#fileinfo"));
+        //fd.append("CustomField", "This is some extra data");
+        $.ajax({
+            url: 'https://api-rania.azurewebsites.net/api/xml',  
+            type: 'POST',
+            data: fd,
+            success:function(data){
+                $('#output').html(data);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+});
+    </script>    
 </body>
 </html>
