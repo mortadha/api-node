@@ -26,8 +26,8 @@ var storage = multer.diskStorage({
 
 /* add admin. */
 router.post('/xml',upload.single('xml'), function(req, res, next) {
-  var video_name =  req.file.originalname;
-  var xml = fs.readFileSync('https://api-rania.azurewebsites.net/'+video_name, 'utf8');
+  //var video_name =  req.file.originalname;
+  var xml = fs.readFileSync('https://api-rania.azurewebsites.net/xml--0024-01.xml', 'utf8');
  var inspect = require('util').inspect;
   var obj = parse(xml);
   let positionAnnoces = 0 ;
