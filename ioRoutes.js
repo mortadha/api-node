@@ -50,7 +50,7 @@ module.exports = function(io) {
         });
         forEach(fflok.friends,function(f){
           let isFriend = false ;
-          const start = async function(a, b) {
+          const start =  function(a, b) {
             const result = await friendOrNo(user,f.id._id);
           } 
           forEach( myfflok.places,function(p){
@@ -120,7 +120,7 @@ module.exports = function(io) {
               return res.status(500).json({'error': 'wrong token'});
           }
     });
-    apiRouter.put('/io/updatepositionForfflok',  function(req, res) {
+  /*  apiRouter.put('/io/updatepositionForfflok',  function(req, res) {
     // Getting auth header
         var headerAuth  = req.headers['authorization'];
         var userId      = jwtUtils.getUser(headerAuth);
@@ -138,7 +138,7 @@ module.exports = function(io) {
         if(err){
           throw err;
         }
-        ffloks.getPositionFFlokUser(idfflok, async function(err,result){
+        ffloks.getPositionFFlokUser(idfflok,  function(err,result){
           if(err){
             throw err;
           }
@@ -228,4 +228,4 @@ module.exports = function(io) {
       for (let index = 0; index < array.length; index++) {
         await callback(array[index], index, array)
       }
-    }
+    }*/
