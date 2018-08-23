@@ -399,7 +399,7 @@ module.exports = {
 function getGooglePlace(googlePlace,idsPlaces,listeplaces,limite, callback) {
   let compt = 0;
   
-  async.each(googlePlace, async function(place, next) {
+  async.each(googlePlace,  function(place, next) {
     if(idsPlaces.indexOf(place.place_id) === -1 && compt <= limite - listeplaces.length ){
       compt++;
       var p = {};
