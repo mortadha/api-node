@@ -1,0 +1,58 @@
+{
+    "Sms_validation": {
+        "en": " Welcome to fflok. Your validation code is: ",
+        "fr": " Bienvenue sur fflok. Votre code de validation est : "
+    },
+    "Sms_validationGloo": {
+        "en": " Welcome to GLOO. Your validation code is: ",
+        "fr": " Bienvenue sur GLOO. Votre login et password sont : "
+    },
+    "Sms_Invitation": {
+        "en": " invite you to join fflok. download link: www.fflok.com.",
+        "fr": " vous invite a rejoindre fflok . lien de telechargement : www.fflok.com ."
+    },
+    "Sms_Invitation_fflok": {
+        "en": " invite you to join a fflok. name : ",
+        "fr": " vous invite a rejoindre un fflok intitulé : "
+    },
+    "New_recruit": {
+        "en": " New recruit ",
+        "fr": "Nouvelle recrue "
+    },"Swag1": {
+        "en": " Swag - L’invité ",
+        "fr": " Swag - L’invité "
+    },"Swag5": {
+        "en": " Swag - On remet ça ? ",
+        "fr": " Swag - On remet ça ? "
+    },"Swag10": {
+        "en": " Swag - Swag ! ",
+        "fr": "Swag - Swag "
+    },"Swag25": {
+        "en": " Swag - On vous apprécie ",
+        "fr": " Swag - On vous apprécie "
+    },"Swag100": {
+        "en": " Swag - Tout le monde se l’arrache ! ",
+        "fr": " Swag - Tout le monde se l’arrache ! "
+    }
+
+    ,"Swag100": {
+        "en": " Swag - Tout le monde se l’arrache ! ",
+        "fr": " Swag - Tout le monde se l’arrache ! "
+    }
+    ,"CommunityBuilder1": {
+        "en": " Community Builder - Gastronome niveau 1 ",
+        "fr": " Community Builder - Gastronome niveau 1"
+    }
+    ,"CommunityBuilder2": {
+        "en": " Community Builder - Gastronome niveau 2 ",
+        "fr": " Community Builder - Gastronome niveau 2 "
+    }
+    ,"CommunityBuilder3": {
+        "en": " Community Builder - Gastronome niveau 3 ",
+        "fr": " Community Builder - Gastronome niveau 3 "
+    }
+    ,"CommunityBuilder4": {
+        "en": " Community Builder - Gastronome niveau 4 ",
+        "fr": " Community Builder - Gastronome niveau 4 "
+    }
+}
