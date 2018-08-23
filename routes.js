@@ -138,7 +138,7 @@ exports.router =(function() {
     //flook
 
     //get fflok
-    apiRouter.route('/users/getfflok/:id').get(fflokController.getfflok);
+   // apiRouter.route('/users/getfflok/:id').get(fflokController.getfflok);
 
     //get all my fflok
     apiRouter.route('/users/getAllMyfflok').get(fflokController.getAllMyfflok);
