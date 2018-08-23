@@ -254,7 +254,7 @@ module.exports = {
         return res.status(500).json({'error': 'wrong token'});
     }
   },
-  getfflok: function(req,res){
+ /* getfflok: function(req,res){
     // Getting auth header
     var headerAuth  = req.headers['authorization'];
     var user        = jwtUtils.getUser(headerAuth);
@@ -321,7 +321,7 @@ module.exports = {
         return res.status(500).json({'error': 'wrong token'});
     }
   },
- 
+ */
   votefflok: function(req,res){
      // Getting auth header
       var headerAuth  = req.headers['authorization'];
