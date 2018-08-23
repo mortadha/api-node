@@ -416,7 +416,7 @@ function getGooglePlace(googlePlace,idsPlaces,listeplaces,limite, callback) {
         p.path_img = config.baseUrlGoogleMap + "/photo?maxwidth=400&photoreference="+ place.photos[0].photo_reference +"&key="+config.keyGoogleMap;
        }
        const url =  config.baseUrlGoogleMap + '/details/json?reference='+ place.reference+'&key='+config.keyGoogleMap;
-       const getLocation = async url => {
+       const getLocation =  url => {
          try {
            const response = await fetch(url);
            const json = await response.json();
