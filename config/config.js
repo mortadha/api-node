@@ -16,7 +16,9 @@ module.exports = {
     portSoket : 3000
 };
 //connect to DB fflok
-mongoose.connect('mongodb://localhost/fflokv14');
+/*mongoose.connect('mongodb://localhost/fflokv14');
+var db = mongoose.connections;*/
+mongoose.connect('mongodb://rania:PNETJ9t13FZyO5B55yIQOikeV9cXgslKLlBC06YrZC0GSh61hhbx4RAf8OJg62iuMRiaVQ4DHYC0fltAvF2Z0Q%3D%3D@rania.documents.azure.com:10255/?ssl=true');
 var db = mongoose.connections;
 
 
