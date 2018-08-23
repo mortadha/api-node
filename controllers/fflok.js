@@ -383,7 +383,7 @@ module.exports = {
     }
   },
 }
-async function friendOrNo (number, id, callback){
+/*async function friendOrNo (number, id, callback){
    
   await users.friendOrNo( number,id,function(err,friend){
      callback (true);
@@ -395,7 +395,7 @@ async function friendOrNo (number, id, callback){
       }
     });
 }
-
+*/
 function getGooglePlace(googlePlace,idsPlaces,listeplaces,limite, callback) {
   let compt = 0;
   
