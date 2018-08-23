@@ -51,7 +51,7 @@ module.exports = function(io) {
         forEach(fflok.friends,function(f){
           let isFriend = false ;
           const start =  function(a, b) {
-            const result = await friendOrNo(user,f.id._id);
+            const result =  friendOrNo(user,f.id._id);
           } 
           forEach( myfflok.places,function(p){
             if(p.id && f.place){
