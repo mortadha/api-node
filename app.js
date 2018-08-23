@@ -79,9 +79,9 @@ app.use(function myauth(req, res, next) {
 
 app.use('/api', apiRouter);
 app.use('/api', apiRouterAdmin);
-var apiRouterIO = require('./ioRoutes')(io);
-app.use('/api', apiRouterIO);
-require('./ioRoutes')(app,io); 
+//var apiRouterIO = require('./ioRoutes')(io);
+//app.use('/api', apiRouterIO);
+//require('./ioRoutes')(app,io); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
