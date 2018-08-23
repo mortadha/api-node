@@ -418,8 +418,8 @@ function getGooglePlace(googlePlace,idsPlaces,listeplaces,limite, callback) {
        const url =  config.baseUrlGoogleMap + '/details/json?reference='+ place.reference+'&key='+config.keyGoogleMap;
        const getLocation =  url => {
          try {
-           const response = await fetch(url);
-           const json = await response.json();
+           const response =  fetch(url);
+           const json =  response.json();
            p.phone = json.result.formatted_phone_number;
           } catch (error) {
            console.log(error);
