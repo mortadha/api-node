@@ -425,7 +425,7 @@ function getGooglePlace(googlePlace,idsPlaces,listeplaces,limite, callback) {
            console.log(error);
          }
        };
-      await getLocation(url);
+       getLocation(url);
        places.addPlace( p ,function(err,place){
           listeplaces.push(place);
        });
