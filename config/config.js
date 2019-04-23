@@ -18,7 +18,7 @@ module.exports = {
 //connect to DB fflok
 /*mongoose.connect('mongodb://localhost/fflokv14');
 var db = mongoose.connections;*/
-mongoose.connect('mongodb://apifrancemortadha:7QS8v0Xd0hEGQ0K8bP9ZIMwOckKISjQKJYBB9VlAGeqGJglXXcpwaXCAgHHrgG8rEADeMrnQGBbNRH9k4IPZtg==@apifrancemortadha.documents.azure.com:10255/?ssl=true);
+mongoose.connect('mongodb://apifrancemortadha:7QS8v0Xd0hEGQ0K8bP9ZIMwOckKISjQKJYBB9VlAGeqGJglXXcpwaXCAgHHrgG8rEADeMrnQGBbNRH9k4IPZtg==@apifrancemortadha.documents.azure.com:10255/?ssl=true');
 var db = mongoose.connections;
 
 
